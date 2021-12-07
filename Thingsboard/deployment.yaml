@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tb2-log-pv-claim
+  labels:
+    app: tb2
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tb2-data-pv-claim
+  labels:
+    app: tb2
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: tb2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tb2
+  template:
+    metadata:
+      labels:
+        app: tb2
+    spec:
+      volumes:
+        - name: tb2-data
+          persistentVolumeClaim:
+            claimName: tb2-data-pv-claim
+        - name: tb2-logs
+          persistentVolumeClaim:
+            claimName: tb2-log-pv-claim            
+      containers:
+      - name: thingsboard
+        image: thingsboard/tb-postgres
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 9090
+        - name: mqtt
+          containerPort: 1883          
+        volumeMounts:
+          - mountPath: /var/logs/thingsboard
+            name: tb2-logs
+          - mountPath: /data
+            name: tb2-data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-tb2
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      name: web
+      port: 9090
+    - protocol: TCP
+      name: mqtt
+      port: 1883      
+  selector:
+    app: tb2
