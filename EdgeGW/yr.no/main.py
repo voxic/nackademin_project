@@ -15,25 +15,25 @@ import requests
 
 
 # Set this to the IP of your MQTT broker
-mqtt_broker = "10.0.0.81"
+mqtt_broker = "xxx.xxx.xxx.xxx"
 
 # Device auth token
-device_token = "vnFOdAEpppd0JvdROQYp"
+device_token = "xxxxx"
 
 # Set MQTT topic.
 topic = "v1/devices/me/telemetry"
 
 # Set latitude for weather data
-lat = "59.1938719"
+lat = "xxxx"
 # Set longiude
-lon = "17.9402075"
+lon = "xxxx"
 
 # Yr.no API URL
 url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={}&lon={}".format(lat, lon)
 
 # Yr.no headers, user-agent should point to where YR.no can contact you
 headers = {
-  'User-Agent': 'gr8c.se TestApp'
+  'User-Agent': 'xxxxxx'
 }
 
 # Setup logger

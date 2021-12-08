@@ -66,7 +66,7 @@ kind: Service
 metadata:
   name: svc-tb2
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       name: web

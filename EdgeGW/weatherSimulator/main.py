@@ -15,10 +15,10 @@ import json
 
 
 # Set this to the IP of your MQTT broker
-mqtt_broker = "10.0.0.81"
+mqtt_broker = "xxx.xxx.xxx.xxx"
 
 # Device auth token
-device_token = "pldY8vPZl6SbFQTrSjXb"
+device_token = "xxxxxxxx"
 
 # Set MQTT topic.
 topic = "v1/devices/me/telemetry"
@@ -83,7 +83,7 @@ if __name__ == '__main__':
             last_rain = new_rain
 
             # Set time between data points
-            time.sleep(300)
+            time.sleep(1)
 
     except Exception as e:
         logger.error("exception main()")

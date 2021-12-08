@@ -22,6 +22,12 @@ This is how I deployed an EC2 in AWS
 
 This is how I deployed Ubuntu and Microk8s
 
+I used vultr.com as an IaaS, deplyed their instance with 2GB RAM...
+
+#### Firewall
+
+Added ports for HTTP in and MQTT in
+
 ### Thingsboard
 
 This is how I deployed Thingsboard
