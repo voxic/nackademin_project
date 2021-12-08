@@ -6,7 +6,7 @@ I live in an area where weather is extremely local, this means that I can't rely
 
 ## Project components
 
-I'm going to utilizw the public cloud as the infrastructure for this project. Specifically AWS as an IaaS (Infrastructure as a service) provider. I will also use an open source IoT-platform called Thingsboard (https://thingsboard.io). Thingsboard will be hosted on a AWS EC2 instance running Ubuntu server and MicroK8s.
+I'm going to utilize the public cloud as the infrastructure for this project. Specifically Vultr as an IaaS (Infrastructure as a service) provider. I will also use an open source IoT-platform called Thingsboard (https://thingsboard.io). Thingsboard will be hosted on a Virtual machine instance running Ubuntu server and MicroK8s.
 
 Data is going to be collected by an edge gateway and sent to Thingsboard using MQTT.
 
@@ -14,9 +14,9 @@ Data is going to be collected by an edge gateway and sent to Thingsboard using M
 
 Using the visualization framework in Thingsboard, I'm going to create a Dashboard to visualize Local and YR.no weather data. 
 
-### AWS EC2
+### Vultr
 
-This is how I deployed an EC2 in AWS
+This is how I deployed an virtual machine
 
 ### Ubuntu and Microk8s
 
