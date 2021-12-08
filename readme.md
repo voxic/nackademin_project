@@ -10,7 +10,7 @@ I'm going to utilize the public cloud as the infrastructure for this project. Sp
 
 Data is going to be collected by an edge gateway and sent to Thingsboard using MQTT.
 
-![diagram.png](diagram.png)
+![diagram.png](diagramVultr.png)
 
 Using the visualization framework in Thingsboard, I'm going to create a Dashboard to visualize Local and YR.no weather data. 
 
